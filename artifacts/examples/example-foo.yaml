@@ -1,0 +1,16 @@
+apiVersion: podservicecrd.k8s.io/v1alpha1
+kind: PodService
+metadata:
+  name: my-nginx
+spec:
+  deploymentName: my-nginx
+  ports:
+    - targetPort: 80
+      protocol: TCP
+      port: 18088
+      name: test-80
+    - targetPort: 443
+      protocol: TCP
+      port: 18043
+      name: test-443
+  serviceType: NodePort
